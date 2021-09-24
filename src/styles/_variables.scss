@@ -1,0 +1,32 @@
+// Colors
+$color-bg-dark: #1a1a1a;
+
+$color-n-0: #fff;
+$color-p-500-base: #00e57f;
+$color-p-700: #00a35a;
+$color-p-900: #0c291c;
+$color-e-500: #ff1a49;
+$color-e-600: #e0002d;
+$color-invisible: #fff;
+$color-neutrals-n-050: #e1e3eb;
+$color-neutrals-n-100: #b5b7bf;
+$color-neutrals-n-150: #90929b;
+$color-neutrals-n-200: #4e515b;
+$color-neutrals-n-300-lines: #393b44;
+$color-neutrals-n-400: #2f3139;
+$color-neutrals-n-500: #272930;
+$color-neutrals-n-600-base: #212329;
+$color-neutrals-n-700: #1c1d21;
+$color-neutrals-n-800: #121317;
+$color-neutrals-n-900: #09090b;
+
+// Effect styles
+@mixin effect-style-buttons-glow {
+  box-shadow: 0px 0px 13px #fff;
+}
+@mixin effect-style-buttons-hover-glow {
+  box-shadow: 0px 0px 13px #fff;
+}
+@mixin effect-style-modal-window-glow {
+  box-shadow: 0px 0px 32px #00e57f;
+}

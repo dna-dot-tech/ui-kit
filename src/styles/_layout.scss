@@ -1,0 +1,25 @@
+html,
+body {
+  background-color: $color-neutrals-n-600-base;
+  color: $color-n-0;
+  @include text-style;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex > * {
+  flex: 1 1 100%;
+}
+
+::selection {
+  background: #0080ff;
+  text-shadow: none;
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Share+Tech+Mono&display=swap');
+
+// Text styles
+@mixin text-style {
+  font-family: 'Chakra Petch', monospace;
+  font-weight: bolder;
+  font-style: normal;
+  text-decoration: none;
+}
+@mixin text-style-headings-title-2 {
+  font-size: 24px;
+  line-height: 32;
+}
+@mixin text-style-headings-title-3 {
+  font-size: 20px;
+  line-height: 28;
+}
+@mixin text-style-headings-title-4 {
+  font-size: 18px;
+  line-height: 24;
+}
+@mixin text-style-body-body-1 {
+  font-size: 16px;
+  line-height: 24;
+}
+@mixin text-style-body-body-2 {
+  font-size: 14px;
+  line-height: 20;
+}
+@mixin text-style-supportive-overline {
+  font-size: 14px;
+  line-height: 20;
+  letter-spacing: 4px;
+}
+@mixin text-style-supportive-caption {
+  font-size: 12px;
+  line-height: 16;
+  letter-spacing: 4px;
+}
+@mixin text-style-supportive-tiny {
+  font-size: 10px;
+  line-height: 14;
+  letter-spacing: 6px;
+}
+@mixin text-style-special-table-data {
+  font-size: 16px;
+  font-family: 'Roboto Mono';
+  font-weight: bold;
+  line-height: 24;
+}
+@mixin text-style-special-table-data-large {
+  font-size: 20px;
+  font-family: 'Roboto Mono';
+  font-weight: bold;
+  line-height: 28;
+}
+@mixin text-style-special-badge-message {
+  font-size: 28px;
+  line-height: 36;
+}
+@mixin text-style-special-hidden-password {
+  font-size: 16px;
+  line-height: 24;
+  letter-spacing: 16px;
+}
+@mixin text-style-special-centrifuge {
+  font-size: 24px;
+  font-family: 'Roboto Mono';
+  font-weight: bold;
+  line-height: 32;
+}
+@mixin text-style-special-header-units {
+  font-size: 14px;
+  line-height: 20;
+  letter-spacing: 4px;
+}
+@mixin text-style-special-well-number {
+  font-size: 20px;
+  line-height: 28;
+}
+@mixin text-style-special-huge-2 {
+  font-size: 48px;
+  line-height: 48;
+}
