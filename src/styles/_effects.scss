@@ -1,15 +1,58 @@
 // Corners
-// Angles tl:135,tr:-135, bl:45,br:-45
-@mixin effect-style-border-cut($color: #fff, $size: 12px) {
+@mixin effect-style-clip-path-cut(
+  $width: 100px,
+  $height: 48px,
+  $cut: 5px,
+  $stroke: 1px,
+  $bg-color: #000,
+  $stroke-color: #fff,
+  $font-size: inherit,
+  $font-color: inherit
+) {
+  width: $width;
+  height: $height;
+  background-color: $stroke-color;
+  position: relative;
+  clip-path: polygon(
+    $cut 0,
+    $width 0,
+    $width calc(#{$height} - #{$cut}),
+    calc(#{$width} - #{$cut}) $height,
+    0 $height,
+    0 $cut
+  );
+
+  &::before {
+    content: attr(data-text);
+    font-size: $font-size;
+    color: $font-color;
+    text-align: center;
+    line-height: $height;
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+    position: absolute;
+    clip-path: polygon(
+      calc(#{$cut} + #{$stroke} / 2) $stroke,
+      calc(#{$width} - #{$stroke}) $stroke,
+      calc(#{$width} - #{$stroke}) calc(#{$height} - #{$cut} - #{$stroke} / 2),
+      calc(#{$width} - #{$cut} - #{$stroke} / 2) calc(#{$height} - #{$stroke}),
+      $stroke calc(#{$height} - #{$stroke}),
+      $stroke calc(#{$cut} + #{$stroke} / 2)
+    );
+  }
+}
+
+@mixin effect-style-gradient-cut($color: #fff, $size: 12px) {
   background: linear-gradient(135deg, transparent $size, $color 0) top,
     linear-gradient(-45deg, transparent $size, $color 0) bottom;
   background-size: 100% 50%;
   background-repeat: no-repeat;
 }
-@mixin effect-style-border-cut-top($color: #fff, $size: 12px) {
+@mixin effect-style-gradient-cut-top($color: #fff, $size: 12px) {
   background: linear-gradient(135deg, transparent $size, $color 0) top left;
 }
-@mixin effect-style-border-cut-bottom($color: #fff, $size: 12px) {
+@mixin effect-style-gradient-cut-bottom($color: #fff, $size: 12px) {
   background: linear-gradient(-45deg, transparent $size, $color 0) bottom right;
 }
 // Shadows

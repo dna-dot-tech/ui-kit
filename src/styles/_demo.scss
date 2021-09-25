@@ -5,14 +5,93 @@
   line-height: 48px;
   background-color: $color-neutrals-n-500;
   margin: 10px;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
-  // @include effect-style-border-cut-bottom($color-neutrals-n-500);
-  border: solid 1px #fff;
+  clip-path: polygon(5px 0, 100px 0, 100px 43px, 95px 48px, 0 48px, 0 5px);
+}
+
+.shape-stroke {
+  margin: 10px;
+  @include effect-style-clip-path-cut(
+    $width: 100px,
+    $height: 48px,
+    $cut: 10px,
+    $stroke: 1px,
+    $bg-color: $color-neutrals-n-400,
+    $stroke-color: #fff
+  );
+}
+
+.wrap-shadow {
+  position: relative;
+  transition: filter 0.3s ease-in-out;
+  &:hover {
+    filter: drop-shadow(0 0 5px #fff);
+    &::before {
+      transform: translate(-10px, -10px);
+    }
+    &::after {
+      transform: translate(10px, 10px);
+    }
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+    transition: transform 0.3s linear;
+  }
+  &::before {
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(
+      135deg,
+      transparent 0,
+      transparent 20%,
+      $color-p-500-base 20%,
+      $color-p-500-base 32%,
+      transparent 32%,
+      transparent 100%
+    );
+  }
+  &::after {
+    z-index: -10;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 20%,
+      $color-p-500-base 20%,
+      $color-p-500-base 32%,
+      transparent 32%,
+      transparent 100%
+    );
+  }
 }
 
 .shape-wrap-shadow {
-  filter: drop-shadow(0 0 3px #fff);
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
+  width: 100px;
+  height: 48px;
+  margin: 10px;
+  background-color: #fff;
+  position: relative;
+  clip-path: polygon(5px 0, 100px 0, 100px 43px, 95px 48px, 0 48px, 0 5px);
+  filter: drop-shadow(0 0 5px #fff);
+}
+
+.shape-wrap-shadow::before {
+  content: attr(data-text);
+  width: 10px;
+  height: 10px;
+  top: 2px;
+  left: 2px;
+  background: transparent;
+  background: linear-gradient(135deg, transparent 20%, $color-p-500-base 0);
+  position: absolute;
+  font-size: 8px;
+  text-align: center;
+  line-height: 10px;
 }
 
 $dash-svg: "<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' fill='none' rx='5' ry='5' stroke='#{$color-neutrals-n-500}' stroke-width='1' stroke-dasharray='10,5' stroke-dashoffset='0' stroke-linecap='square'/></svg>";
